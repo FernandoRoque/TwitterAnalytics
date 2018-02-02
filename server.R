@@ -2987,7 +2987,8 @@
     progress43 <- shiny::Progress$new()
     on.exit(progress43$close())
     progress43$set(message = "Getting emoji data", value = 0)
-    userTweets <- favorites(input$twitterUser18, n = input$tweetNum18)
+    userTweets <- searchTwitter(input$twitterUser18, n = input$tweetNum18)
+    #userTweets <- favorites(input$twitterUser18, n = input$tweetNum18)
     tab <- twListToDF(userTweets)
     tweet43 <- unique(tab)
     text <- data.frame(

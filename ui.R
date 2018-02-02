@@ -186,7 +186,7 @@ navbarPage(
 
           div(
             style = "display: inline-block;vertical-align:right; width: 140px;",
-            textInput("twitterUser3", "Enter Topic", "DataScience")
+            textInput("twitterUser3", "Enter Topic", "rstats")
           ),
 
           div(
@@ -215,7 +215,7 @@ navbarPage(
       "User Tweets",
       sidebarLayout(
         sidebarPanel(
-          textInput("twitterUser4", "Enter User", "askdrstats"),
+          textInput("twitterUser4", "Enter User", "juliasilge"),
           selectInput("chooseTime_Platform1", "Horizontal axis:", choices = c(
             "Hour" = "hour", "Weekday" = "weekday", "Month" = "month",
             "Year" = "year", "Platform" = "platform"
@@ -261,7 +261,7 @@ navbarPage(
       "User Favorites",
       sidebarLayout(
         sidebarPanel(
-          textInput("twitterUser4_fav", "Enter User", "askdrstats"),
+          textInput("twitterUser4_fav", "Enter User", "juliasilge"),
           selectInput("chooseTime_Platform1_fav", "Horizontal axis:", choices = c(
             "Hour" = "hour", "Weekday" = "weekday", "Month" = "month",
             "Year" = "year", "Platform" = "platform"
@@ -307,7 +307,7 @@ navbarPage(
       "Topic Tweets",
       sidebarLayout(
         sidebarPanel(
-          textInput("twitterUser4_topic", "Enter Topic", "DataScience"),
+          textInput("twitterUser4_topic", "Enter Topic", "rstats"),
           selectInput("chooseTime_Platform1_topic", "Horizontal axis:", choices = c(
             "Hour" = "hour", "Weekday" = "weekday", "Month" = "month",
             "Year" = "year", "Platform" = "platform"
@@ -360,7 +360,7 @@ navbarPage(
 
           tags$style(HTML(".tabbable > .nav > li > a[data-value='User Tweets'] {background-color: #333333;   color:white}")),
 
-          textInput("twitterUser5", "Enter User", "askdrstats"),
+          textInput("twitterUser5", "Enter User", "juliasilge"),
           tags$head(
             tags$style(HTML("#showTweetCloud{font-weight:bold;}"))
           ),
@@ -396,7 +396,7 @@ navbarPage(
 
           tags$style(HTML(".tabbable > .nav > li > a[data-value='User Favorites'] {background-color: #333333;   color:white}")),
 
-          textInput("twitterUser6", "Enter User", "askdrstats"),
+          textInput("twitterUser6", "Enter User", "juliasilge"),
 
           tags$head(
             tags$style(HTML("#showFavoriteCloud{font-weight:bold;}"))
@@ -432,7 +432,7 @@ navbarPage(
 
           tags$style(HTML(".tabbable > .nav > li > a[data-value='Topic Tweets'] {background-color: #333333;   color:white}")),
 
-          textInput("twitterUser7", "Enter Topic", "DataScience"),
+          textInput("twitterUser7", "Enter Topic", "rstats"),
 
           tags$head(
             tags$style(HTML("#showTopicCloud{font-weight:bold;}"))
@@ -471,7 +471,7 @@ navbarPage(
 
           tags$style(HTML(".tabbable > .nav > li > a[data-value='User Tweets'] {background-color: #333333;   color:white}")),
 
-          textInput("twitterUser1_topic", "Enter User", "askdrstats"),
+          textInput("twitterUser1_topic", "Enter User", "juliasilge"),
           tags$head(
             tags$style(HTML("#showTopicModelUser{font-weight:bold;}"))
           ),
@@ -531,7 +531,7 @@ navbarPage(
 
           tags$style(HTML(".tabbable > .nav > li > a[data-value='User Favorites'] {background-color: #333333;   color:white}")),
 
-          textInput("twitterUser2_topic", "Enter User", "askdrstats"),
+          textInput("twitterUser2_topic", "Enter User", "juliasilge"),
 
           tags$head(
             tags$style(HTML("#showTopicModelFavorite{font-weight:bold;}"))
@@ -593,7 +593,7 @@ navbarPage(
 
           tags$style(HTML(".tabbable > .nav > li > a[data-value='Topic Tweets'] {background-color: #333333;   color:white}")),
 
-          textInput("twitterUser3_topic", "Enter Topic", "DataScience"),
+          textInput("twitterUser3_topic", "Enter Topic", "rstats"),
 
           tags$head(
             tags$style(HTML("#showTopicModelTweets{font-weight:bold;}"))
@@ -655,7 +655,7 @@ navbarPage(
       "User Tweets",
       sidebarLayout(
         sidebarPanel(
-          textInput("twitterUser8", "Enter User", "askdrstats"),
+          textInput("twitterUser8", "Enter User", "juliasilge"),
 
           div(
             style = "display: inline-block;vertical-align:right; width: 80px;",
@@ -713,7 +713,7 @@ navbarPage(
       "User Favorites",
       sidebarLayout(
         sidebarPanel(
-          textInput("twitterUser9", "Enter User", "askdrstats"),
+          textInput("twitterUser9", "Enter User", "juliasilge"),
           div(
             style = "display: inline-block;vertical-align:right; width: 80px;",
             numericInput("tweetNum9", "Tweet Number", 200)
@@ -777,7 +777,7 @@ navbarPage(
       "Topic Tweets",
       sidebarLayout(
         sidebarPanel(
-          textInput("twitterUser9_topic", "Enter Topic", "DataScience"),
+          textInput("twitterUser9_topic", "Enter Topic", "rstats"),
           div(
             style = "display: inline-block;vertical-align:right; width: 80px;",
             numericInput("tweetNum9_topic", "Tweet Number", 200)
@@ -940,7 +940,7 @@ navbarPage(
       "Mapping Tweets",
       sidebarLayout(
         sidebarPanel(
-          textInput("twitterUser12", "Enter topic", "DataScience"),
+          textInput("twitterUser12", "Enter topic", "rstats"),
           numericInput("circleSize", "Circle size threshold", "5"),
           numericInput("tweetNum12", "Number of tweets", "50"),
           selectInput("circleCount", "Circle radius by:", choices = c(
@@ -980,7 +980,7 @@ navbarPage(
       "Retweets Network",
       sidebarLayout(
         sidebarPanel(
-          textInput("twitterUser13", "Search Topic", "DataScience"),
+          textInput("twitterUser13", "Search Topic", "rstats"),
           numericInput("tweetNum13", "Enter Tweet Number", 100),
           numericInput("retweetLimit", "Filter Retweets", 1),
           actionButton("showRetweetNetwork", "Show Retweets Network", style = "color: #000000;background-color: #00aced; margin: 4px;"),
@@ -1154,7 +1154,7 @@ navbarPage(
       sidebarLayout(
         sidebarPanel(
           width = 3,
-          textInput("twitterUser18", "Enter Topic", "DataScience"),
+          textInput("twitterUser18", "Enter Topic", "rstats"),
           numericInput("tweetNum18", "Enter Tweet Number", 100),
           actionButton("showEmojiAnalysisTopic", "Show Emoji Trends", style = "color: #000000;background-color: #00aced;margin: 4px;"),
           p("Feature tracks emoji use for the specified topic compared by actual, retweeted and favorited tweets frequencies. 
