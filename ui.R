@@ -101,6 +101,11 @@ navbarPage(
 
           tags$style(type = "text/css", "div.info.legend.leaflet-control br {clear: both;}"),
 
+          strong("Feature shows tweets and user specific information (name, description, friends count, status count, favorites count, 
+                                                      account creation date, location)."),
+
+          hr(),
+
           div(
             style = "display: inline-block;vertical-align:right; width: 150px;",
             textInput("twitterUser1", "Enter User", "hadleywickham")
@@ -113,8 +118,6 @@ navbarPage(
 
           actionButton("showUserTweets", "Show User Tweets", style = "color: #000000;background-color: #00aced;margin: 4px;"),
           div(style = "display:inline-block", actionButton("showUserInfo", "Show User Info", style = "color: #000000;background-color: #00aced;margin: 4px;")),
-          p("Feature shows tweets and user specific information (name, description, friends count, status count, favorites count, 
-                                                      account creation date, location)."),
 
           tags$head(
             tags$style(HTML("#showUserTweets{font-weight:bold;}"))
@@ -149,6 +152,10 @@ navbarPage(
 
           tags$style(HTML(".tabbable > .nav > li > a[data-value='User Favorites'] {background-color: #333333;   color:white}")),
 
+          strong("Feature shows favorited tweets by the specified user."),
+
+          hr(),
+
           div(
             style = "display: inline-block;vertical-align:right; width: 140px;",
             textInput("twitterUser2", "Enter User", "hadleywickham")
@@ -160,7 +167,6 @@ navbarPage(
           ),
 
           actionButton("showUserFav", "Show User Tweets", style = "color: #000000;background-color: #00aced;margin: 4px;"),
-          p("Feature shows favorited tweets by the specified user."),
 
           tags$head(
             tags$style(HTML("#showUserFav{font-weight:bold;}"))
@@ -184,6 +190,10 @@ navbarPage(
 
           tags$style(HTML(".tabbable > .nav > li > a[data-value='Topic Tweets'] {background-color: #333333;   color:white}")),
 
+          strong("Feature shows tweets for the specified topic."),
+
+          hr(),
+
           div(
             style = "display: inline-block;vertical-align:right; width: 140px;",
             textInput("twitterUser3", "Enter Topic", "rstats")
@@ -195,7 +205,7 @@ navbarPage(
           ),
 
           actionButton("showTopicMention", "Show User Tweets", style = "color: #000000;background-color: #00aced;margin: 4px;"),
-          p("Feature shows tweets for the specified topic."),
+
 
           tags$head(
             tags$style(HTML("#showTopicMention{font-weight:bold;}"))
@@ -215,6 +225,10 @@ navbarPage(
       "User Tweets",
       sidebarLayout(
         sidebarPanel(
+          strong("Feature assesses a user's twitter use across time metrics like hour, weekday, month and year as well as across twitter platforms 
+                                           including Hootsuite, Instagram, iPhone and Web Client."),
+
+          hr(),
           textInput("twitterUser4", "Enter User", "juliasilge"),
           selectInput("chooseTime_Platform1", "Horizontal axis:", choices = c(
             "Hour" = "hour", "Weekday" = "weekday", "Month" = "month",
@@ -232,8 +246,6 @@ navbarPage(
             tags$style(HTML("#showTweetStats{font-weight:bold;}"))
           ),
 
-          p("Feature assesses a user's twitter use across time metrics like hour, weekday, month and year as well as across twitter platforms 
-                                           including Hootsuite, Instagram, iPhone and Web Client."),
 
           downloadButton("downloadTweetStats", "Download Data", style = "color: #000000;background-color: #00aced;margin: 4px;")
         ),
@@ -261,6 +273,9 @@ navbarPage(
       "User Favorites",
       sidebarLayout(
         sidebarPanel(
+          strong("Feature assesses a user's tweet favorite behavior across time metrics like hour, weekday, month and year as well as across twitter platforms 
+                                           including Hootsuite, Instagram, iPhone and Web Client."),
+          hr(),
           textInput("twitterUser4_fav", "Enter User", "juliasilge"),
           selectInput("chooseTime_Platform1_fav", "Horizontal axis:", choices = c(
             "Hour" = "hour", "Weekday" = "weekday", "Month" = "month",
@@ -278,8 +293,6 @@ navbarPage(
             tags$style(HTML("#showTweetStats_fav{font-weight:bold;}"))
           ),
 
-          p("Feature assesses a user's tweet favorite behavior across time metrics like hour, weekday, month and year as well as across twitter platforms 
-                                           including Hootsuite, Instagram, iPhone and Web Client."),
 
           downloadButton("downloadTweetStats_fav", "Download Data", style = "color: #000000;background-color: #00aced;margin: 4px;")
         ),
@@ -307,6 +320,9 @@ navbarPage(
       "Topic Tweets",
       sidebarLayout(
         sidebarPanel(
+          strong("Feature assesses a topic's spread across time metrics like hour, weekday, month and year as well as across twitter platforms 
+                                           including Hootsuite, Instagram, iPhone and Web Client."),
+          hr(),
           textInput("twitterUser4_topic", "Enter Topic", "rstats"),
           selectInput("chooseTime_Platform1_topic", "Horizontal axis:", choices = c(
             "Hour" = "hour", "Weekday" = "weekday", "Month" = "month",
@@ -323,9 +339,6 @@ navbarPage(
           tags$head(
             tags$style(HTML("#showTweetStats_topic{font-weight:bold;}"))
           ),
-
-          p("Feature assesses a topic's spread across time metrics like hour, weekday, month and year as well as across twitter platforms 
-                                           including Hootsuite, Instagram, iPhone and Web Client."),
 
           downloadButton("downloadTweetStats_topic", "Download Data", style = "color: #000000;background-color: #00aced;margin: 4px;")
         ),
@@ -360,6 +373,12 @@ navbarPage(
 
           tags$style(HTML(".tabbable > .nav > li > a[data-value='User Tweets'] {background-color: #333333;   color:white}")),
 
+          strong("Feature shows word cloud for the specified user, excluding all retweets and replies to get more personalized words.  
+                                                      Accompanying dotplot shows word counts. Specify tweet number and minimum 
+            number of repeated words (high number of minimum words will yield smaller and more relevant words 
+            in the cloud)."),
+          hr(),
+
           textInput("twitterUser5", "Enter User", "juliasilge"),
           tags$head(
             tags$style(HTML("#showTweetCloud{font-weight:bold;}"))
@@ -372,11 +391,7 @@ navbarPage(
             style = "display: inline-block;vertical-align:right; width: 70px;",
             numericInput("minWords", "Min Words", 2)
           ),
-          actionButton("showTweetCloud", "Show Cloud", style = "color: #000000;background-color: #00aced;"),
-          p("Feature shows word cloud for the specified user, excluding all retweets and replies to get more personalized words. In addition, 
-                                                      the dotplot shows word counts. Specify tweet number and minimum 
-                                                      number of repeated words (high number of minimum words will yield smaller and more relevant words 
-                                                      in the cloud).")
+          actionButton("showTweetCloud", "Show Cloud", style = "color: #000000;background-color: #00aced;")
         ),
         mainPanel(
           tabsetPanel(
@@ -396,6 +411,9 @@ navbarPage(
 
           tags$style(HTML(".tabbable > .nav > li > a[data-value='User Favorites'] {background-color: #333333;   color:white}")),
 
+          strong("Feature shows word cloud for a user's favorited tweets, excluding all retweets and replies to get more personalized words. Accompanying dotplot shows word counts. Specify tweet number and minimum 
+                                                      number of repeated words (high number of minimum words will yield smaller and more relevant words in cloud)."),
+          hr(),
           textInput("twitterUser6", "Enter User", "juliasilge"),
 
           tags$head(
@@ -410,9 +428,7 @@ navbarPage(
             numericInput("minWords2", "Min Words", 2)
           ),
 
-          actionButton("showFavoriteCloud", "Show Cloud", style = "color: #000000;background-color: #00aced;"),
-          p("Feature shows word cloud for a user's favorited tweets, excluding all retweets and replies to get more personalized words. In addition, the dotplot shows word counts. Specify tweet number and minimum 
-                                                      number of repeated words (high number of minimum words will yield smaller and more relevant words in cloud).")
+          actionButton("showFavoriteCloud", "Show Cloud", style = "color: #000000;background-color: #00aced;")
         ),
         mainPanel(
           tabsetPanel(
@@ -432,6 +448,9 @@ navbarPage(
 
           tags$style(HTML(".tabbable > .nav > li > a[data-value='Topic Tweets'] {background-color: #333333;   color:white}")),
 
+          strong("Feature shows word cloud for the specified topic. Accompanying dotplot shows word counts. Specify tweet number and minimum 
+                                                      number of repeated words (high number of minimum words will yield smaller and more relevant words in cloud)."),
+          hr(),
           textInput("twitterUser7", "Enter Topic", "rstats"),
 
           tags$head(
@@ -446,9 +465,7 @@ navbarPage(
             style = "display: inline-block;vertical-align:right; width: 60px;",
             numericInput("minWords3", "Min Words", 2)
           ),
-          actionButton("showTopicCloud", "Show Cloud", style = "color: #000000;background-color: #00aced;"),
-          p("Feature shows word cloud for the specified topic. In addition, the dotplot shows word counts. Specify tweet number and minimum 
-                                                      number of repeated words (high number of minimum words will yield smaller and more relevant words in cloud).")
+          actionButton("showTopicCloud", "Show Cloud", style = "color: #000000;background-color: #00aced;")
         ),
         mainPanel(
           tabsetPanel(
@@ -471,6 +488,11 @@ navbarPage(
 
           tags$style(HTML(".tabbable > .nav > li > a[data-value='User Tweets'] {background-color: #333333;   color:white}")),
 
+          strong("Feature performs topic modeling for the specified user, displaying prevalent words for
+                                                the specified number of topics in plot and table formats. Specify number of topics and words per topic for display.
+            Decrease the number of topics and words per topic for a less crowded display. Search for a term and topic to see related tweets."),
+
+          hr(),
           textInput("twitterUser1_topic", "Enter User", "juliasilge"),
           tags$head(
             tags$style(HTML("#showTopicModelUser{font-weight:bold;}"))
@@ -487,10 +509,7 @@ navbarPage(
             style = "display: inline-block;vertical-align:right; width: 70px;",
             numericInput("topWords1User", "Number of Words", 5)
           ),
-          actionButton("showTopicModelUser", "Show Plot and Table", style = "color: #000000;background-color: #00aced;"),
-          p("Feature performs topic modeling for the specified user, displaying prevalent words for
-                                                the specified number of topics in plot and table formats. Specify number of topics and words per topic for display.
-                                                Decrease the number of topics and words per topic for a less crowded display. Search for a term and topic to see related tweets.")
+          actionButton("showTopicModelUser", "Show Plot and Table", style = "color: #000000;background-color: #00aced;")
         ),
         mainPanel(
           tabsetPanel(
@@ -531,6 +550,11 @@ navbarPage(
 
           tags$style(HTML(".tabbable > .nav > li > a[data-value='User Favorites'] {background-color: #333333;   color:white}")),
 
+          strong("Feature performs topic modeling for the specified user's favorited tweets, displaying prevalent words for 
+                                                the specified number of topics in plot and table formats. Specify number of topics and words per topic for display.
+            Decrease the number of topics and words per topic for a less crowded display. Search for a term and topic to see related tweets."),
+
+          hr(),
           textInput("twitterUser2_topic", "Enter User", "juliasilge"),
 
           tags$head(
@@ -549,10 +573,7 @@ navbarPage(
             numericInput("topWords2User", "Number of Words", 5)
           ),
 
-          actionButton("showTopicModelFavorite", "Show Plot and Table", style = "color: #000000;background-color: #00aced;"),
-          p("Feature performs topic modeling for the specified user's favorited tweets, displaying prevalent words for 
-                                                the specified number of topics in plot and table formats. Specify number of topics and words per topic for display.
-                                                Decrease the number of topics and words per topic for a less crowded display. Search for a term and topic to see related tweets.")
+          actionButton("showTopicModelFavorite", "Show Plot and Table", style = "color: #000000;background-color: #00aced;")
         ),
         mainPanel(
           tabsetPanel(
@@ -593,6 +614,12 @@ navbarPage(
 
           tags$style(HTML(".tabbable > .nav > li > a[data-value='Topic Tweets'] {background-color: #333333;   color:white}")),
 
+          strong("Feature performs topic modeling for the specified topic, displaying 
+                                                prevalent words for the specified number of topics in plot and table formats.
+            Specify number of topics and words per topic for display. 
+            Decrease the number of topics and words per topic for a less crowded display. Search for a term and topic to see related tweets."),
+
+          hr(),
           textInput("twitterUser3_topic", "Enter Topic", "rstats"),
 
           tags$head(
@@ -611,11 +638,7 @@ navbarPage(
             style = "display: inline-block;vertical-align:right; width: 70px;",
             numericInput("topWords3User", "Number of Words", 5)
           ),
-          actionButton("showTopicModelTweets", "Show Plot and Table", style = "color: #000000;background-color: #00aced;"),
-          p("Feature performs topic modeling for the specified topic, displaying 
-                                                prevalent words for the specified number of topics in plot and table formats.
-                                                Specify number of topics and words per topic for display. 
-                                                Decrease the number of topics and words per topic for a less crowded display. Search for a term and topic to see related tweets.")
+          actionButton("showTopicModelTweets", "Show Plot and Table", style = "color: #000000;background-color: #00aced;")
         ),
         mainPanel(
           tabsetPanel(
@@ -655,6 +678,10 @@ navbarPage(
       "User Tweets",
       sidebarLayout(
         sidebarPanel(
+          strong("Feature performs sentiment analysis for the specified user. Click 'Show Plots' to show word cloud, bar plot and time series for the user based on his/her tweets.
+                                           Click on a point in time series to show positive or negative tweets associated with that point. 
+            "),
+          hr(),
           textInput("twitterUser8", "Enter User", "juliasilge"),
 
           div(
@@ -679,11 +706,7 @@ navbarPage(
               HTML("#showPointData{margin-right:5px;}")
             )
           ),
-          actionButton("showWordBarSentiment", "Show Plots", style = "color: #000000;background-color: #00aced;margin: 4px;"),
-
-          p("Feature performs sentiment analysis for the specified user. Click 'Show Plots' to show word cloud, bar plot and time series for the user based on his/her tweets.
-                                           Click on a point in time series to show positive or negative tweets associated with that point. 
-                                           ")
+          actionButton("showWordBarSentiment", "Show Plots", style = "color: #000000;background-color: #00aced;margin: 4px;")
         ),
         mainPanel(
           tabsetPanel(
@@ -713,6 +736,10 @@ navbarPage(
       "User Favorites",
       sidebarLayout(
         sidebarPanel(
+          strong("Feature performs sentiment analysis for the specified user. Click 'Show Plots' to show word cloud, bar plot and time series for the user based on his/her favorited tweets.
+                                           Click on a point in time series to show positive or negative tweets associated with that point. 
+                 "),
+          hr(),
           textInput("twitterUser9", "Enter User", "juliasilge"),
           div(
             style = "display: inline-block;vertical-align:right; width: 80px;",
@@ -743,11 +770,7 @@ navbarPage(
             )
           ),
 
-          actionButton("showWordBarSentiment2", "Show Plots", style = "color: #000000;background-color: #00aced;margin: 4px;"),
-
-          p("Feature performs sentiment analysis for the specified user. Click 'Show Plots' to show word cloud, bar plot and time series for the user based on his/her favorited tweets.
-                                           Click on a point in time series to show positive or negative tweets associated with that point. 
-                                           ")
+          actionButton("showWordBarSentiment2", "Show Plots", style = "color: #000000;background-color: #00aced;margin: 4px;")
         ),
         mainPanel(
           tabsetPanel(
@@ -777,6 +800,10 @@ navbarPage(
       "Topic Tweets",
       sidebarLayout(
         sidebarPanel(
+          strong("Feature performs sentiment analysis for the specified topic. Click 'Show Plots' to show word cloud, bar plot and time series for the topic.
+                                           Click on a point in time series to show positive or negative tweets associated with that point. 
+            "),
+          hr(),
           textInput("twitterUser9_topic", "Enter Topic", "rstats"),
           div(
             style = "display: inline-block;vertical-align:right; width: 80px;",
@@ -807,11 +834,7 @@ navbarPage(
             )
           ),
 
-          actionButton("showWordBarSentiment3", "Show Plots", style = "color: #000000;background-color: #00aced;margin: 4px;"),
-
-          p("Feature performs sentiment analysis for the specified topic. Click 'Show Plots' to show word cloud, bar plot and time series for the topic.
-                                           Click on a point in time series to show positive or negative tweets associated with that point. 
-                                           ")
+          actionButton("showWordBarSentiment3", "Show Plots", style = "color: #000000;background-color: #00aced;margin: 4px;")
         ),
         mainPanel(
           tabsetPanel(
@@ -871,6 +894,9 @@ navbarPage(
       sidebarLayout(
         sidebarPanel(
           width = 3,
+          strong("Feature globally maps the specified user's followings, with available geolocation data. Click on a point to see following details like name, 
+                                                      description, friend count, and user tweets amongst others."),
+          hr(),
           div(
             style = "display: inline-block;vertical-align:right; width: 150px;",
             textInput("twitterUser10", "Enter User", "hadleywickham")
@@ -889,9 +915,6 @@ navbarPage(
             tags$style(HTML("#showFollowingMap{font-weight:bold;}"))
           ),
 
-          p("Feature globally maps the specified user's followings, with available geolocation data. Click on a point to see following details like name, 
-                                                      description, friend count, and user tweets amongst others."),
-
           downloadButton("downloadFollowing", "Download Data", style = "color: #000000;background-color: #00aced;margin: 4px;")
         ),
         mainPanel(
@@ -906,6 +929,10 @@ navbarPage(
       sidebarLayout(
         sidebarPanel(
           width = 3,
+          strong("Feature globally maps the specified user's followers, with available geolocation data. Click on a point to see follower details like name, 
+                                                      description, friend count, and user tweets amongst others."),
+          hr(),
+
           div(
             style = "display: inline-block;vertical-align:right; width: 150px;",
             textInput("twitterUser11", "Enter User", "hadleywickham")
@@ -924,9 +951,6 @@ navbarPage(
             tags$style(HTML("#showFollowerMap{font-weight:bold;}"))
           ),
 
-          p("Feature globally maps the specified user's followers, with available geolocation data. Click on a point to see follower details like name, 
-                                                      description, friend count, and user tweets amongst others."),
-
           downloadButton("downloadFollower", "Download Data", style = "color: #000000;background-color: #00aced;margin: 4px;")
         ),
         mainPanel(
@@ -940,6 +964,13 @@ navbarPage(
       "Mapping Tweets",
       sidebarLayout(
         sidebarPanel(
+          strong("Feature facilitates global visualization of location enabled tweets for a specified topic. Vertices' radius 
+                                           is indicative of the tweet's retweet count, favorites count, or the tweeting user's friends, followers or 
+            status count. The vertices can be colored by hour or weekday status to show the
+            global trend/movement of tweets over time. Click on the vertex/band of tweet to show tweet specific information. Decrease
+            the circle size threshold to proportionally decrease the radius of the circles associated with the 
+            vertices to get a holistic mapped visual."),
+          hr(),
           textInput("twitterUser12", "Enter topic", "rstats"),
           numericInput("circleSize", "Circle size threshold", "5"),
           numericInput("tweetNum12", "Number of tweets", "50"),
@@ -958,13 +989,6 @@ navbarPage(
             tags$style(HTML("#showMapTweets{font-weight:bold;}"))
           ),
 
-          p("Feature facilitates global visualization of location enabled tweets for a specified topic. Vertices' radius 
-                                           is indicative of the tweet's retweet count, favorites count, or the tweeting user's friends, followers or 
-                                           status count. The vertices can be colored by hour or weekday status to show the
-                                           global trend/movement of tweets over time. Click on the vertex/band of tweet to show tweet specific information. Decrease
-                                           the circle size threshold to proportionally decrease the radius of the circles associated with the 
-                                           vertices to get a holistic mapped visual."),
-
           downloadButton("downloadTweetMapping", "Download Data", style = "color: #000000;background-color: #00aced;margin: 4px;")
         ),
         mainPanel(
@@ -980,6 +1004,15 @@ navbarPage(
       "Retweets Network",
       sidebarLayout(
         sidebarPanel(
+          strong("Feature assesses a topic's influence by searching 
+                                           mentions of retweets involving that topic. Sentiments
+            of those tweets are analyzed and distinguished by emotions like
+            anger, anticipation, disgust, fear, joy, negative, positive,
+            sadness, surprise, trust and no emotion. Zoom in on the network to take a
+            closer look. Click on each individual vertex to explore the user's remarks about
+            the searched topic. Change the filter network to show network with greater than the 
+            specified number of retweets."),
+          hr(),
           textInput("twitterUser13", "Search Topic", "rstats"),
           numericInput("tweetNum13", "Enter Tweet Number", 100),
           numericInput("retweetLimit", "Filter Retweets", 1),
@@ -987,16 +1020,7 @@ navbarPage(
 
           tags$head(
             tags$style(HTML("#showRetweetNetwork{font-weight:bold;}"))
-          ),
-
-          p("Feature assesses a topic's influence by searching 
-                                           mentions of retweets involving that topic. Additionally sentiments
-                                           of those tweets are analyzed and distinguished by emotions like
-                                           anger, anticipation, disgust, fear, joy, negative, positive,
-                                           sadness, surprise, trust and no emotion. Zoom in on the network to take a
-                                           closer look. Click on each individual vertex to explore the user's remarks about
-                                           the searched topic. Change the filter network to show network with greater than the 
-                                           specified number of retweets.")
+          )
         ),
         mainPanel(
           visNetworkOutput("retweetNetwork", height = "400px"),
@@ -1008,6 +1032,15 @@ navbarPage(
       "Following Network",
       sidebarLayout(
         sidebarPanel(
+          strong("Feature shows individuals followed by the specified user. The magnitude of the 
+                                           following user vertex corresponds to the number of followers for the followed individual (larger
+            vertex corresponds to more followers). Change the network display by specifying follower limit
+            so users with large followers like celebrities and corporations 
+            are balanced with individuals with normal twitter following. Change the range to only
+            show following users with followers within that range. Click on a vertex to display user-specific
+            information about the following individual as well as tweet mentions involving the searched user 
+            and the individual being followed."),
+          hr(),
           textInput("twitterUser14", "Search User", "hadleywickham"),
           numericInput("tweetNum14", "Search Following Number", 50),
           numericInput("lowLimitFollowing", "Follower Lower Limit", 10),
@@ -1018,15 +1051,6 @@ navbarPage(
           tags$head(
             tags$style(HTML("#showFollowingNetwork{font-weight:bold;}"))
           ),
-
-          p("Feature shows individuals followed by the specified user. The magnitude of the 
-                                           following user vertex corresponds to the number of followers for the followed individual (larger
-                                           vertex corresponds to more followers). Change the network display by specifying follower limit
-                                           so users with large followers like celebrities and corporations 
-                                           are balanced with individuals with normal twitter following. Change the range to only
-                                           show following users with followers within that range. Click on a vertex to display user-specific
-                                           information about the following individual as well as tweet mentions involving the searched user 
-                                           and the individual being followed."),
 
           downloadButton("downloadFollowingData", "Download Data", style = "color: #000000;background-color: #00aced;margin: 4px;")
         ),
@@ -1041,6 +1065,15 @@ navbarPage(
       "Follower Network",
       sidebarLayout(
         sidebarPanel(
+          strong("Feature shows followers of the searched user. Magnitude of the 
+                                           follower vertex corresponds to the number of followers for the followed user (larger
+            vertex corresponds to more followers). Change the network display by specifying follower limit
+            so users with large followers like celebrities and corporations 
+            are balanced with individuals with normal twitter following. Additionally change the range to only
+            show following personalities with followers within the range. Click on a vertex to display user-specific
+            information about the follower as well as the tweet mentions involving the searched user 
+            and the follower."),
+          hr(),
           textInput("twitterUser15", "Search User", "hadleywickham"),
           numericInput("tweetNum15", "Search Follower Number", 50),
           numericInput("lowLimitFollower", "Follower Lower Limit", 10),
@@ -1051,15 +1084,6 @@ navbarPage(
           tags$head(
             tags$style(HTML("#showFollowerNetwork{font-weight: bold;}"))
           ),
-
-          p("Feature shows followers of the searched user. The magnitude of the 
-                                           follower vertex corresponds to the number of followers for the followed user (larger
-                                           vertex corresponds to more followers). Change the network display by specifying follower limit
-                                           so users with large followers like celebrities and corporations 
-                                           are balanced with individuals with normal twitter following. Additionally change the range to only
-                                           show following personalities with followers within the range. Click on a vertex to display user-specific
-                                           information about the follower as well as the tweet mentions involving the searched user 
-                                           and the follower."),
 
           downloadButton("downloadFollowerData", "Download Data", style = "color: #000000;background-color: #00aced;margin: 4px;")
         ),
@@ -1078,13 +1102,14 @@ navbarPage(
       sidebarLayout(
         sidebarPanel(
           width = 3,
-          textInput("twitterUser16", "Enter User", "juliasilge"),
-          numericInput("tweetNum16", "Enter Tweet Number", 100),
-          actionButton("showEmojiAnalysisUser", "Show Emoji Trends", style = "color: #000000;background-color: #00aced;margin: 4px;"),
-          p("Feature tracks emoji use for the specified user compared by actual, retweeted and favorited tweets frequencies. 
+          strong("Feature tracks emoji use for the specified user compared by actual, retweeted and favorited tweets frequencies. 
                                                       Click a point to see the tweets associated with that emoji at that frequency.
                                                       Zoom over each graph for a more granulated visual. See the 'Trends Over time' tab for tracking emoji use in user tweets, retweets 
                                                       and favorites over time."),
+          hr(),
+          textInput("twitterUser16", "Enter User", "juliasilge"),
+          numericInput("tweetNum16", "Enter Tweet Number", 100),
+          actionButton("showEmojiAnalysisUser", "Show Emoji Trends", style = "color: #000000;background-color: #00aced;margin: 4px;"),
           tags$head(
             tags$style(HTML("#showEmojiAnalysisUser{font-weight:bold;}"))
           ),
@@ -1116,13 +1141,15 @@ navbarPage(
       sidebarLayout(
         sidebarPanel(
           width = 3,
+          strong("Feature tracks emoji use for the specified user's favorited tweets compared by actual, retweeted and favorited tweets frequencies. 
+                                                      Click a point to see the tweets associated with that emoji at that frequency.
+            Zoom over each graph for a more granulated visual. See the 'Trends Over time' tab for tracking emoji use in user tweets, retweets 
+            and favorites over time."),
+          hr(),
           textInput("twitterUser17", "Enter User", "juliasilge"),
           numericInput("tweetNum17", "Enter Tweet Number", 100),
           actionButton("showEmojiAnalysisFav", "Show Emoji Trends", style = "color: #000000;background-color: #00aced;margin: 4px;"),
-          p("Feature tracks emoji use for the specified user's favorited tweets compared by actual, retweeted and favorited tweets frequencies. 
-                                                      Click a point to see the tweets associated with that emoji at that frequency.
-                                                      Zoom over each graph for a more granulated visual. See the 'Trends Over time' tab for tracking emoji use in user tweets, retweets 
-                                                      and favorites over time."),
+
           tags$head(
             tags$style(HTML("#showEmojiAnalysisFav{font-weight:bold;}"))
           ),
@@ -1154,13 +1181,14 @@ navbarPage(
       sidebarLayout(
         sidebarPanel(
           width = 3,
-          textInput("twitterUser18", "Enter Topic", "rstats"),
-          numericInput("tweetNum18", "Enter Tweet Number", 100),
-          actionButton("showEmojiAnalysisTopic", "Show Emoji Trends", style = "color: #000000;background-color: #00aced;margin: 4px;"),
-          p("Feature tracks emoji use for the specified topic compared by actual, retweeted and favorited tweets frequencies. 
+          strong("Feature tracks emoji use for the specified topic compared by actual, retweeted and favorited tweets frequencies. 
                                                       Click a point to see the tweets associated with that emoji at that frequency.
                                                       Zoom over each graph for a more granulated visual. See the 'Trends Over time' tab for tracking emoji use in user tweets, retweets 
                                                       and favorites over time."),
+          hr(),
+          textInput("twitterUser18", "Enter Topic", "rstats"),
+          numericInput("tweetNum18", "Enter Tweet Number", 100),
+          actionButton("showEmojiAnalysisTopic", "Show Emoji Trends", style = "color: #000000;background-color: #00aced;margin: 4px;"),
           tags$head(
             tags$style(HTML("#showEmojiAnalysisTopic{font-weight:bold;}"))
           ),
