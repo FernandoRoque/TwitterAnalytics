@@ -1,5 +1,5 @@
 
-(function(input, output, session) {
+function(input, output, session) {
 
   # Tweets Table Section
 
@@ -3261,4 +3261,4 @@
   output$Reference <- renderPrint({
     sessionInfo()
   })
-})
+}
