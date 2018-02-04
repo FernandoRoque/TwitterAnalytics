@@ -1216,11 +1216,8 @@ navbarPage(
       )
     )
   ),
-  navbarMenu(
+  tabPanel(
     "References",
-    tabPanel(
-      "Package References",
-      verbatimTextOutput("Reference")
-    )
+    verbatimTextOutput("Reference")
   )
 )
